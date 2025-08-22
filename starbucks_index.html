@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks - Home</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ_q8fHdG2dLOVreVkNYzfNjRu9uOvt7RO2eJl70_iFKCo8f4gxHZPL6WQz-6hbv5GsLc&usqp=CAU">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--<a href="menu.html">MENU</a>-->
+
+</head>
+
+<style>
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts & Colors */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f2e7;
+    color: #333;
+}
+
+
+/* Header Navigation */
+header {
+            z-index: 999;
+            position:fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            width: 90%;
+            gap: 20px;
+        }
+        .nav-links :hover{
+            color: green;
+        
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #1e3932;
+            font-size: 14px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #1e3932;
+        }
+
+        .sign-in {
+            border: 1px solid #000;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .join-now {
+            background-color: grey;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+   /* /*background-color: #006241; /* Starbucks green */
+   /* width: 100%;
+    position: relative; /* or fixed if you want it to stay at top */
+    /*left: 0;
+    top: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00704A;
+    padding: 10px 20px;*/
+/*  background-color: white; /* Starbucks green 
+    width: 100vw;  spans full viewport width 
+    margin: 0;
+    padding: 0;
+    position: fixed;  stays at top while scrolling 
+    top: 0;
+    left: 0;
+    z-index: 1000; */
+/*} 
+
+/*.logo img {
+    height: 50px;
+}
+
+nav ul {
+   /* list-style: none;
+    display: flex;
+    gap: 20px;*/
+     /* display: flex;li
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px; /* adjust spacing 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 15px 30px;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    border-bottom: 2px solid white;
+} */
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+    color: #00704A;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #00704A;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.btn:hover {
+    background-color: #005f3c;
+}
+
+.hero-image img {
+    margin-top: 200px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+/* Promo Section */
+.promo {
+    display: flex;
+    align-items: center;
+    background-color: #f9f4ec;
+    padding: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.promo-image {
+    position: relative;
+    flex: 1;
+}
+
+.promo-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+}
+
+.promo-image .tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #00704A;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.promo-text {
+    flex: 1;
+}
+
+.promo-text h2 {
+    font-size: 2rem;
+    color: #00704A;
+    margin-bottom: 15px;
+}
+
+.promo-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.order-btn {
+    background-color: #00704A;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.order-btn:hover {
+    background-color: #005f3c;
+}
+
+
+/* Footer */
+footer {
+    background-color: #00704A;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+/* Free Drink Section */
+.free-drink {
+    display: flex;
+    align-items: center;
+    background-color: #d6d6a7;
+    padding: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.free-drink-text {
+    flex: 1;
+}
+
+.free-drink-text h2 {
+    font-size: 2rem;
+    color: #1e3932;
+    margin-bottom: 15px;
+}
+
+.free-drink-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #1e3932;
+    line-height: 1.5;
+}
+
+.join-btn {
+    display: inline-block;
+    border: 1.5px solid #1e3932;
+    color: #1e3932;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.join-btn:hover {
+    background-color: #1e3932;
+    color: white;
+}
+
+.free-drink-image {
+    flex: 1;
+    text-align: right;
+}
+
+.free-drink-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+}
+
+/* Strato Section */
+.strato-section {
+    display: flex;
+    align-items: center;
+    background-color: #d4d3a5;
+    flex-wrap: wrap;
+}
+
+.strato-image {
+    flex: 1;
+}
+
+.strato-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.strato-text {
+    flex: 1;
+    padding: 40px;
+}
+
+.strato-text h2 {
+    font-size: 2rem;
+    color: #1e3932;
+    margin-bottom: 15px;
+}
+
+.strato-text p {
+    font-size: 1.1rem;
+    color: #1e3932;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.order-btn {
+    display: inline-block;
+    border: 1.5px solid #1e3932;
+    color: #1e3932;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.order-btn:hover {
+    background-color: #1e3932;
+    color: white;
+}
+
+.promo-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d8d7a8;
+    padding: 40px 60px;
+    flex-wrap: wrap;
+}
+
+.promo-text {
+    max-width: 500px;
+}
+
+.promo-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1e3932;
+}
+
+.promo-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1e3932;
+}
+
+.promo-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #1e3932;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #1e3932;
+    font-size: 14px;
+}
+
+.promo-btn:hover {
+    background-color: #1e3932;
+    color: #fff;
+}
+
+.promo-image img {
+    max-width: 400px;
+    height: auto;
+}
+
+.footer {
+    background-color: #fff;
+    padding: 40px 60px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1 1 180px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.footer-column a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+#menu-toggle{
+    display: none;
+}
+
+/* hamburger icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    position: relative;
+    z-index: 1001;
+}
+.hamburger span {
+    background: #1e3932;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    left: 0;
+    transition: 0.3s;
+}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 8px; }
+.hamburger span:nth-child(3) { top: 16px; }
+
+.sidebar{
+        display: none;
+    }
+
+
+/* =========================
+   Mobile view (≤768px)
+   ========================= */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    /* hide normal menu */
+    .nav-links,
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;  /* below header */
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    /* show menu when hamburger is checked */
+    .menu-toggle:checked ~ .nav-links,
+    .menu-toggle:checked ~ .nav-right {
+        display: flex;
+    }
+
+    /* make buttons fit mobile */
+    .nav-links a,
+    .nav-right a {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .sign-in,
+    .join-now {
+        width: 100%;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #fff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding-top: 70px;
+      transition: left 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar a {
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #1e3932;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .sidebar a:hover {
+      background: #f5f5f5;
+      color: green;
+    }
+
+    /* WHEN CHECKBOX IS CHECKED */
+    #menu-toggle:checked ~ .sidebar {
+      left: 0;
+    }
+
+    /* PUSH CONTENT WHEN OPEN */
+    #menu-toggle:checked ~ .overlay {
+      display: block;
+    }
+
+    /* DARK OVERLAY */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 900;
+    }
+    .hero-image img{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: -30px;
+    
+    }
+    .promo-image img{
+        width: 250px;
+        
+    }
+    .free-drink img{
+        width: 200px;
+        margin-right:10px;
+    }
+    .hero h1{
+        margin-top: 50px;
+    }
+    .strato-section img{
+        width: 200px;
+        margin: 0 auto;
+    }
+    .promo-section img{
+    
+        max-width: 200px;
+    }
+    
+
+}
+
+
+</style>
+<body>
+
+    <!-- Navigation -->
+   <!--  <header>
+    
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgM-2p7eDEQKzrT0uSAyBiXNXWoL_o6MUzVAi44d618z98qk4RBuJMh4UDBZ7c2DfeS5g&usqp=CAU" alt="Starbucks Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="starbucks_index.html">HOME</a></li>
+                <li><a href="starbucks_menu.html">MENU </li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="rewards.html">REWARDS </a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+ -->
+<!-- 
+<header>
+    <div class="logo">
+        <img src="https://globalassets.starbucks.com/assets/94f5a8e94f674b7db86c3a2a452741c6.jpg" alt="Starbucks Logo">
+    </div>
+
+     hidden checkbox for toggle 
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+     hamburger icon 
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <nav class="nav-links">
+        <a href="#">MENU</a>
+        <a href="#">REWARDS</a>
+        <a href="#">GIFT CARDS</a>
+    </nav>
+
+    <div class="nav-right">
+        <a href="#">Find a store</a>
+        <a href="#" class="sign-in">Sign in</a>
+        <a href="#" class="join-now">Join now</a>
+    </div>
+</header> -->
+
+
+<header>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1024px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks Logo">
+    </div>
+
+    <!-- hidden checkbox for toggle -->
+   
+       <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+      <!-- Sidebar Menu -->
+  <div class="sidebar">
+    <a href="starbucks_index.html">HOME</a>
+    <a href="starbucks_menu.html">MENU</a>
+    <!-- <a href="starbucks_reward.html">REWARDS</a> -->
+    <!-- <a href="starbucks_giftcard.html">GIFT CARD</a> -->
+  </div>
+
+    <!-- nav links -->
+    <nav class="nav-links">
+        <a href="starbucks_menu.html">MENU</a>
+        <a href="starbucks_reward.html">REWARDS</a> 
+        <a href="starbucks_giftcard.html">GIFT CARDS</a>
+         <!-- <a href="starbucks_joi.html">GIFT CARDS</a> -->
+    </nav>
+
+    <!-- right side buttons -->
+    <div class="nav-right">
+         <a href="starbucks_find.html">Find a store</a>
+         <a href="starbucks_signin1.html" class="sign-in">Sign in</a>
+         <!-- <a href="#" class="join-now">Join now</a>  -->
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <header>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1024px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="starbucks_index.html">HOME</a>
+                <a href="starbucks_menu.html">MENU </a>
+                <a href="starbucks_giftcard.html">GIFT CARD</a>
+                <a href="starbucks_reward.html">REWARDS </a>
+
+      
+    </nav>
+    <div class="nav-right">
+        <a href="starbucks_find.html">Find a store</a>
+        <a href="starbucks_signin.html" class="sign-in">Sign in</a>
+        <a href="starbucks_signin.html" class="join-now">Join now</a>
+    </div>
+</header> -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>It's not just coffee,<br>It's <span>Starbucks</span></h1>
+            <p>Serving coffee that inspires and nurtures the human spirit – one person, one cup, and one neighborhood at a time.</p>
+            <a href="starbucks_menu.html" class="btn">Explore Menu</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm87aZGphIP2D6rS8jeLirzyNxgZin8YNfqA&s" alt="Starbucks Coffee">
+        </div>
+    </section>
+
+    <!-- Raspberry Promo Section -->
+<section class="promo">
+    <div class="promo-image">
+        <img src="https://media.istockphoto.com/id/1000996948/photo/making-summer-raspberry-lemonade-at-home.jpg?s=612x612&w=0&k=20&c=KilnL675wTqFaYydWMDtbbI1WJQnoXHFVPOvE_Y4XXo=" alt="Raspberry Drink">
+        <span class="tag">Limited Time</span>
+    </div>
+    <div class="promo-text">
+        <h2>Raspberry’s finally back (for now)</h2>
+        <p>Add raspberry syrup to your favorite drinks for a very limited time. Plus try the new Raspberry Cream Cold Brew.</p>
+        <a href="menu.html" class="btn order-btn">Order now</a>
+    </div>
+</section>
+<br>
+<br>
+
+<!-- Free Drink Promo Section -->
+<section class="free-drink">
+    <div class="free-drink-text">
+        <h2>Free drink? Yes, please.</h2>
+        <p>Enjoy a <strong>free handcrafted drink</strong> when you make a qualifying purchase during your first week as a Starbucks<sup>®</sup> Rewards member.*</p>
+        <a href="rewards.html"  class="join-btn">Join &amp; order</a>
+    </div>
+    <div class="free-drink-image">
+        <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-99668.jpg" alt="Free Drink">
+    </div>
+</section>
+<br>
+<br>
+
+
+<!-- Strato Frappuccino Promo -->
+<section class="strato-section">
+    <div class="strato-image">
+        <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-99782.jpg" alt="Strato Frappuccino">
+    </div>
+    <div class="strato-text">
+        <h2>Delightful Strato<sup>™</sup> Frappuccino<sup>®</sup> beverages</h2>
+        <p>
+            Treat yourself to layers of flavor and rich cold foam, in Brown Sugar, 
+            Salted Caramel Mocha and Strawberry Matcha. Get them while you can—for a limited time.
+        </p>
+        <a href="order.html" class="order-btn">Order now</a>
+    </div>
+</section>
+<br>
+<br>
+
+<!-- Promotional Section -->
+<section class="promo-section">
+    <div class="promo-text">
+        <h2>Our captivating new collection</h2>
+        <p>
+            Nigerian–American artist Shadé Akanbi blends tradition and modernity to create 
+            rich prints and patterns. For a limited time.
+        </p>
+        <a href="#" class="promo-btn">Learn more</a>
+    </div>
+    <div class="promo-image">
+        <img src="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-99485.jpg" alt="New Collection">
+    </div>
+</section>
+
+
+    <!-- Footer 
+    <footer>
+        <p>© 2025 Starbucks Coffee Compa y. All rights reserved.</p>
+    </footer>-->
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <a href="#">Our Company</a>
+            <a href="#">Our Coffee</a>
+            <a href="#">About Starbucks</a>
+            <a href="#">Starbucks Archive</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-column">
+            <h3>Careers</h3>
+            <a href="#">Culture and Values</a>
+            <a href="#">Belonging at Starbucks</a>
+            <a href="#">College Achievement Plan</a>
+            <a href="#">Alumni Community</a>
+            <a href="#">U.S. Careers</a>
+            <a href="#">International Careers</a>
+        </div>
+        <div class="footer-column">
+            <h3>Social Impact</h3>
+            <a href="#">Communities</a>
+            <a href="#">Starbucks Foundation</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Environmental and Social Impact Reporting</a>
+        </div>
+        <div class="footer-column">
+            <h3>For Business Partners</h3>
+            <a href="#">Landlord Support Center</a>
+            <a href="#">Suppliers</a>
+            <a href="#">Corporate Gift Card Sales</a>
+            <a href="#">Office and Foodservice Coffee</a>
+        </div>
+        <div class="footer-column">
+            <h3>Order and Pick Up</h3>
+            <a href="#">Order on the App</a>
+            <a href="#">Order on the Web</a>
+            <a href="#">Delivery</a>
+            <a href="#">Order and Pick Up Options</a>
+            <a href="#">Explore and Find Coffee for Home</a>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

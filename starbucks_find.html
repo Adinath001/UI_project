@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find a Store</title>
+<style>
+
+header {
+            z-index: 999;
+            position:fixed;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            width: 75%;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links :hover{
+            color: green;
+        
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #1e3932;
+            font-size: 14px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #1e3932;
+        }
+
+        .sign-in {
+            border: 1px solid #000;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .join-now {
+            background-color: grey;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+
+
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+    .sidebar {
+        width: 35%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .map {
+        flex: 1;
+    }
+    .toggle-buttons {
+        display: flex;
+        margin-bottom: 20px;
+        border: 1px solid #008248;
+        border-radius: 50px;
+        overflow: hidden;
+        width: fit-content;
+    }
+    .toggle-buttons button {
+        flex: 1;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        background-color: white;
+        color: #008248;
+        font-weight: bold;
+    }
+    .toggle-buttons button.active {
+        background-color: #008248;
+        color: white;
+    }
+    .search-bar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+    }
+    .search-bar input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+    .filter-btn {
+        background-color: white;
+        color: #008248;
+        border: 1px solid #008248;
+        padding: 8px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    .zoom-msg {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0 5px 0;
+    }
+    .zoom-subtext {
+        color: gray;
+        margin-bottom: 20px;
+    }
+    .links a {
+        display: block;
+        margin-bottom: 10px;
+        color: #008248;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .footer {
+    background-color: #fff;
+    padding: 40px 60px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1 1 180px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.footer-column a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+ <header>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1024px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="starbucks_index.html">HOME</a>
+                <a href="starbucks_menu.html">MENU </a>
+                <a href="starbucks_giftcard.html">GIFT CARD</a>
+                <a href="starbucks_reward.html">REWARDS </a>
+                <!-- <a href="contact.html">CONTACT</a> -->
+        <!-- <a href="#">MENU</a>
+        <a href="#">REWARDS</a>
+        <a href="#">GIFT CARDS</a> -->
+    </nav>
+    <div class="nav-right">
+        <a href="#">Find a store</a>
+        <a href="starbucks_signin.html" class="sign-in">Sign in</a>
+        <a href="#" class="join-now">Join now</a>
+    </div>
+</header>
+
+
+
+<div class="container">
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+        <div class="toggle-buttons">
+            <button class="active">Pickup</button>
+            <button>Delivery</button>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Find a store">
+            <button class="filter-btn">Filter</button>
+        </div>
+
+        <div class="zoom-msg">Zoomed out too far</div>
+        <div class="zoom-subtext">Try searching for a location or zooming in to see results.</div>
+
+        <div class="links">
+            <a href="#">Privacy Notice</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Do Not Share My Personal Information</a>
+        </div>
+    </div>
+
+    <!-- Right Map -->
+    <div class="map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d19874221.06061649!2d-95.712891!3d37.09024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1691793242608!5m2!1sen!2sus" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <a href="#">Our Company</a>
+            <a href="#">Our Coffee</a>
+            <a href="#">About Starbucks</a>
+            <a href="#">Starbucks Archive</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-column">
+            <h3>Careers</h3>
+            <a href="#">Culture and Values</a>
+            <a href="#">Belonging at Starbucks</a>
+            <a href="#">College Achievement Plan</a>
+            <a href="#">Alumni Community</a>
+            <a href="#">U.S. Careers</a>
+            <a href="#">International Careers</a>
+        </div>
+        <div class="footer-column">
+            <h3>Social Impact</h3>
+            <a href="#">Communities</a>
+            <a href="#">Starbucks Foundation</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Environmental and Social Impact Reporting</a>
+        </div>
+        <div class="footer-column">
+            <h3>For Business Partners</h3>
+            <a href="#">Landlord Support Center</a>
+            <a href="#">Suppliers</a>
+            <a href="#">Corporate Gift Card Sales</a>
+            <a href="#">Office and Foodservice Coffee</a>
+        </div>
+        <div class="footer-column">
+            <h3>Order and Pick Up</h3>
+            <a href="#">Order on the App</a>
+            <a href="#">Order on the Web</a>
+            <a href="#">Delivery</a>
+            <a href="#">Order and Pick Up Options</a>
+            <a href="#">Explore and Find Coffee for Home</a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>

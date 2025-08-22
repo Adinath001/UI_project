@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Rewards</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f3eb;
+        }
+
+        /* HEADER */
+        /*header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #1e3932;
+            font-size: 14px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #1e3932;
+        }
+
+        .sign-in {
+            border: 1px solid #000;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .join-now {
+            background-color: black;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        */
+
+        header {
+            z-index: 999;
+            position:fixed;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            width: 75%;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links :hover{
+            color: green;
+        
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #1e3932;
+            font-size: 14px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #1e3932;
+        }
+
+        .sign-in {
+            border: 1px solid #000;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .join-now {
+            background-color: grey;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* REWARDS SECTION */
+        .rewards-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rewards-text {
+            background-color: #f7f3eb;
+            flex: 1;
+            padding: 50px;
+            min-width: 300px;
+        }
+
+        .rewards-text h1 {
+            font-size: 2.5rem;
+            color: #1e3932;
+            margin-bottom: 20px;
+        }
+
+        .rewards-text p {
+            font-size: 1rem;
+            color: #1e3932;
+            margin-bottom: 30px;
+        }
+
+        .join-btn {
+            display: inline-block;
+            background-color: #00754a;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .join-btn:hover {
+            background-color: #005f3a;
+        }
+
+        .rewards-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .rewards-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        .getting-started {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.getting-started h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #1e3932;
+}
+
+.getting-started p {
+    font-size: 16px;
+    color: #333;
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.step {
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #00754a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #00754a;
+    margin: 0 auto 15px;
+}
+
+/* .rewards {
+    background-color: #f6f7f4;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.rewards h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #1e3932;
+}
+
+.reward-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    color: #1e3932;
+    border-bottom: 3px solid transparent;
+}
+
+.tab span {
+    color: goldenrod;
+}
+
+/* Active tab when targeted 
+:target ~ .reward-tabs a[href="#tab25"],
+:target ~ .reward-tabs a[href="#tab100"],
+:target ~ .reward-tabs a[href="#tab200"],
+:target ~ .reward-tabs a[href="#tab300"],
+:target ~ .reward-tabs a[href="#tab400"] {
+    font-weight: normal;
+    border-color: transparent;
+}
+
+/* Default to tab25 if none selected 
+.reward-content .content {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: #dcebe5;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.reward-content .content:first-of-type {
+    display: flex;
+}
+
+:target {
+    scroll-margin-top: 80px; /* prevent header overlap 
+}
+
+:target.content {
+    display: flex;
+}
+
+.content img {
+    max-width: 180px;
+    border-radius: 10px;
+}
+
+.content h3 {
+    font-size: 20px;
+    color: #1e3932;
+}
+
+.content p {
+    color: #333;
+} */
+
+.rewards {
+    background-color: #f6f7f4;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.rewards h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #1e3932;
+}
+
+.reward-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    color: #1e3932;
+    border-bottom: 3px solid transparent;
+}
+
+.tab span {
+    color: goldenrod;
+}
+
+/* Hide all contents by default */
+.reward-content .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: #dcebe5;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Show only targeted content */
+:target {
+    display: flex;
+    background: blue;
+
+}
+
+/* Default: show first tab if no :target */
+.reward-content:not(:has(:target)) #tab25 {
+    display: flex;
+}
+
+.content img {
+    max-width: 180px;
+    border-radius: 10px;
+}
+
+.content h3 {
+    font-size: 20px;
+    color: #1e3932;
+}
+
+.content p {
+    color: #333;
+}
+
+
+/* Endless Extras Styles */
+.extras {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.extras h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.extras p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #333;
+}
+
+.extras-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.extra-item {
+  max-width: 250px;
+  text-align: center;
+}
+
+.extra-item img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.extra-item h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.extra-item p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.extra-item a {
+  color: #006241; /* Starbucks green */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.extra-item a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .extras-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.footer {
+    background-color: #fff;
+    padding: 40px 60px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1 1 180px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.footer-column a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<!-- <header>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1024px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="starbucks_index.html">HOME</a>
+        <a href="#">MENU</a>
+         <a href="#">REWARDS</a> 
+        <a href="#">GIFT CARDS</a>
+    </nav>
+    <div class="nav-right">
+        <a href="#">Find a store</a>
+        <a href="#" class="sign-in">Sign in</a>
+        <a href="#" class="join-now">Join now</a>
+    </div>
+</header> -->
+
+ <header>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1024px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="starbucks_index.html">HOME</a>
+                <a href="starbucks_menu.html">MENU </a>
+                <a href="starbucks_giftcard.html">GIFT CARD</a>
+                <a href="starbucks_reward.html">REWARDS </a>
+                <!-- <a href="contact.html">CONTACT</a> -->
+        <!-- <a href="#">MENU</a>
+        <a href="#">REWARDS</a>
+        <a href="#">GIFT CARDS</a> -->
+    </nav>
+    <div class="nav-right">
+        <a href="starbucks_find.html">Find a store</a>
+        <a href="starbucks_signin.html" class="sign-in">Sign in</a>
+        <a href="starbucks_signin.html" class="join-now">Join now</a>
+    </div>
+</header>
+
+<!-- REWARDS SECTION -->
+<section class="rewards-section">
+    <div class="rewards-text">
+        <h1>It’s a great day for<br>free coffee</h1>
+        <p>Sign up and start enjoying the perks of Starbucks® Rewards.</p>
+        <a href="#" class="join-btn">Join now</a>
+        <p style="margin-top: 10px; font-size: 0.9rem;">
+            It's even better <a href="#" style="color:#1e3932;">with the app</a>.
+        </p>
+    </div>
+    <div class="rewards-image">
+        <img src="./bootstrap/rewards-hero.png" alt="Starbucks Coffee">
+    </div>
+</section>
+
+<section class="getting-started">
+    <h2>Getting started is easy</h2>
+    <p>Earn Stars and get rewarded in a few easy steps.</p>
+    <div class="steps">
+        <div class="step">
+            <div class="circle">1</div>
+            <h3>Create an account</h3>
+            <p>To get started, <a href="#">join now</a>. You can also <a href="#">join in the app</a>
+            to get access to the full range of Starbucks® Rewards benefits.</p>
+        </div>
+        <div class="step">
+            <div class="circle">2</div>
+            <h3>Order and pay how you’d like</h3>
+            <p>Use cash, credit/debit card or save some time and pay right through the app.
+            You’ll collect Stars all ways. <a href="#">Learn how</a></p>
+        </div>
+        <div class="step">
+            <div class="circle">3</div>
+            <h3>Earn Stars, get Rewards</h3>
+            <p>As you earn Stars, you can redeem them for Rewards — like free food, drinks, and more.
+            Start redeeming with as little as 25 Stars!</p>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="rewards">
+    <h2>Get your favorites for free</h2>
+
+     Tab buttons 
+    <div class="reward-tabs">
+        <a href="#tab25" class="tab">25 <span>★</span></a>
+        <a href="#tab100" class="tab">100 <span>★</span></a>
+        <a href="#tab200" class="tab">200 <span>★</span></a>
+        <a href="#tab300" class="tab">300 <span>★</span></a>
+        <a href="#tab400" class="tab">400 <span>★</span></a>
+    </div>
+
+     Tab content 
+    <div class="reward-content">
+        <div class="content" id="tab25">
+            <img src="./Untitled.png" alt="25 Star Reward">
+            <div>
+                <h3>Customize your drink</h3>
+                <p>Make your drink just right with an extra espresso shot or a dash of your favorite syrup.</p>
+            </div>
+        </div>
+        <div class="content" id="tab100">
+            <img src="./bootstrap/100.png" alt="100 Star Reward">
+            <div>
+                <h3>Brewed hot or iced coffee or tea</h3>
+                <p>Enjoy a freshly brewed coffee or tea, hot or iced — just the way you like it.</p>
+            </div>
+        </div>
+        <div class="content" id="tab200">
+            <img src="images/reward-200.png" alt="200 Star Reward">
+            <div>
+                <h3>Handcrafted drink or hot breakfast</h3>
+                <p>Get any handcrafted drink, hot breakfast sandwich, or oatmeal on us.</p>
+            </div>
+        </div>
+        <div class="content" id="tab300">
+            <img src="images/reward-300.png" alt="300 Star Reward">
+            <div>
+                <h3>Lunch sandwich or protein box</h3>
+                <p>Choose a satisfying lunch option from our menu — sandwich, protein box, or salad.</p>
+            </div>
+        </div>
+        <div class="content" id="tab400">
+            <img src="images/reward-400.png" alt="400 Star Reward">
+            <div>
+                <h3>Select Starbucks merchandise</h3>
+                <p>Bring home a piece of Starbucks — from coffee beans to tumblers and mugs.</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section class="rewards">
+    <h2>Get your favorites for free</h2>
+
+    <!-- Tab buttons -->
+    <div class="reward-tabs">
+        <a href="#tab25" class="tab">25 <span>★</span></a>
+        <a href="#tab100" class="tab">100 <span>★</span></a>
+        <a href="#tab200" class="tab">200 <span>★</span></a>
+        <a href="#tab300" class="tab">300 <span>★</span></a>
+        <a href="#tab400" class="tab">400 <span>★</span></a>
+    </div>
+
+    <!-- Tab content -->
+    <div class="reward-content">
+        <div class="content" id="tab25">
+            <img src="./Untitled.png" alt="25 Star Reward">
+            <div>
+                <h3>Customize your drink</h3>
+                <p>Make your drink just right with an extra espresso shot or a dash of your favorite syrup.</p>
+            </div>
+        </div>
+        <div class="content" id="tab100">
+            <img src="./bootstrap/100.png" alt="100 Star Reward">
+            <div>
+                <h3>Brewed hot or iced coffee or tea</h3>
+                <p>Enjoy a freshly brewed coffee or tea, hot or iced — just the way you like it.</p>
+            </div>
+        </div>
+        <div class="content" id="tab200">
+            <img src="./bootstrap/200.png" alt="200 Star Reward">
+            <div>
+                <h3>Handcrafted drink or hot breakfast</h3>
+                <p>Get any handcrafted drink, hot breakfast sandwich, or oatmeal on us.</p>
+            </div>
+        </div>
+        <div class="content" id="tab300">
+            <img src="./bootstrap/300.png" alt="300 Star Reward">
+            <div>
+                <h3>Lunch sandwich or protein box</h3>
+                <p>Choose a satisfying lunch option from our menu — sandwich, protein box, or salad.</p>
+            </div>
+        </div>
+        <div class="content" id="tab400">
+            <img src="./bootstrap/400.png" alt="400 Star Reward">
+            <div>
+                <h3>Select Starbucks merchandise</h3>
+                <p>Bring home a piece of Starbucks — from coffee beans to tumblers and mugs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Endless Extras Section -->
+<section class="extras">
+  <h2>Endless Extras</h2>
+  <p>Joining Starbucks® Rewards means unlocking access to benefits like quick and easy ordering, tasty Rewards and—yes, free coffee.</p>
+  
+  <div class="extras-container">
+    <div class="extra-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyIKluMfG_cSjcKQQSeg6G7JKS6IUf5fDXrQ&s" alt="Fun freebies">
+      <h3>Fun freebies</h3>
+      <p>Not only can you earn free food, drinks and more, look forward to a birthday treat on us.</p>
+      <a href="#">Learn more</a>
+    </div>
+
+    <div class="extra-item">
+      <img src="https://bloximages.newyork1.vip.townnews.com/thesuburban.com/content/tncms/assets/v3/editorial/5/05/50553b46-38fc-11ed-aec3-236216c990b9/6329e1e8dd786.image.jpg?resize=400%2C267" alt="Order & pay ahead">
+      <h3>Order &amp; pay ahead</h3>
+      <p>Master the art of ordering ahead with saved favorites and payment methods.</p>
+      <a href="#">Learn more</a>
+    </div>
+
+    <div class="extra-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgK1xhs2D0jDxEFODqO-FbrnbBYpNYSFFsAQ&s" alt="Get to free faster">
+      <h3>Get to free faster</h3>
+      <p>Earn Stars even quicker with Bonus Star challenges, Double Star Days and exciting games.</p>
+      <a href="#">Learn more</a>
+    </div>
+  </div>
+</section>
+
+
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <a href="#">Our Company</a>
+            <a href="#">Our Coffee</a>
+            <a href="#">About Starbucks</a>
+            <a href="#">Starbucks Archive</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-column">
+            <h3>Careers</h3>
+            <a href="#">Culture and Values</a>
+            <a href="#">Belonging at Starbucks</a>
+            <a href="#">College Achievement Plan</a>
+            <a href="#">Alumni Community</a>
+            <a href="#">U.S. Careers</a>
+            <a href="#">International Careers</a>
+        </div>
+        <div class="footer-column">
+            <h3>Social Impact</h3>
+            <a href="#">Communities</a>
+            <a href="#">Starbucks Foundation</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Environmental and Social Impact Reporting</a>
+        </div>
+        <div class="footer-column">
+            <h3>For Business Partners</h3>
+            <a href="#">Landlord Support Center</a>
+            <a href="#">Suppliers</a>
+            <a href="#">Corporate Gift Card Sales</a>
+            <a href="#">Office and Foodservice Coffee</a>
+        </div>
+        <div class="footer-column">
+            <h3>Order and Pick Up</h3>
+            <a href="#">Order on the App</a>
+            <a href="#">Order on the Web</a>
+            <a href="#">Delivery</a>
+            <a href="#">Order and Pick Up Options</a>
+            <a href="#">Explore and Find Coffee for Home</a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+</html>

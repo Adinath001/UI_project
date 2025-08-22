@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ_q8fHdG2dLOVreVkNYzfNjRu9uOvt7RO2eJl70_iFKCo8f4gxHZPL6WQz-6hbv5GsLc&usqp=CAU">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Starbucks Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      
+            z-index: 999;
+            position:fixed;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+       
+
+        .nav-links {
+          width: 75%;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links :hover{
+            color: green;
+        
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #1e3932;
+            font-size: 14px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-right a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #1e3932;
+        }
+
+        .sign-in {
+            border: 1px solid #000;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .sign-in :hover {
+            color: #006241;
+
+        }
+
+        .join-now {
+            background-color: grey;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .menu-content{
+
+            margin-top: 20px;
+        }
+
+    /* Top Navbar */
+    /*.navbar {
+      position:fixed;
+      width: 95%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      border-bottom: 1px solid #ddd;
+      background-color: white;
+    }
+
+    .left-nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .left-nav img {
+      height: 50px;
+    }
+
+    .left-nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .left-nav a:hover {
+      color: #006241;
+    }
+
+    .right-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .right-nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    */
+    /* Main Content Layout */
+    .main {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      margin-top: 5%;
+      width: 200px;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 10px;
+    }
+
+    
+
+    
+
+    .sidebar a {
+      display: block;
+      color: #444;
+      text-decoration: none;
+      margin: 8px 0;
+    }
+
+    .sidebar a:hover {
+      color: #006241;
+    }
+
+    /* Menu Content */
+    .menu-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .drink-category {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .drink-category img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .drink-category span {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+ body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .menu-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .menu-item {
+        background: #f7f7f7;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .menu-item img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+
+    .menu-item h3 {
+        margin: 5px 0;
+    }
+
+.footer {
+    padding: 40px 80px;
+    background-color:#fff;
+    border-top: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+  
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: #00704a;
+
+}
+
+
+
+
+/* Wrap both nav sections */
+.mobile-nav {
+    display: flex;
+    align-items: center;
+}
+
+  
+
+/* Divider line inside mobile menu */
+.mobile-nav hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+    .mobile-nav {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .homelink{
+
+            font-weight: bold;
+            color: black;
+
+        }
+
+
+    /* links styling */
+    .nav-links a,
+    .nav-right a {
+        font-size: 14px;
+        padding: 10px 0;
+        display: block;
+    }
+       
+
+    .sign-in,
+    .join-now {
+        width: 100%;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+    #menu-toggle{
+        display: none;
+    }
+
+    .side{
+        margin-right: 200px;
+        color: #000;
+    }
+     .side a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #1e3932;
+            font-weight: bold;
+        
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/…vg/1024px-Starbucks_Corporation_Logo_2011.svg.png "alt="Starbucks Logo">
+
+        
+    </div>
+    <div class="homelink">
+    <a href="starbucks_index.html">HOME</a>
+    </div>
+
+ 
+       <!-- <input type="checkbox" id="menu-toggle"> -->
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+      <!-- Sidebar Menu -->
+  <div class="side">
+    <!-- <a href="starbucks_index.html">HOME</a> -->
+   
+  </div>
+
+    <!-- mobile + desktop nav -->
+    <div class="mobile-nav">
+        <nav class="nav-links">
+            <!-- <a href="menu.html">MENU</a> -->
+            <!-- <a href="rewards.html">REWARDS</a> -->
+            <!-- <a href="giftcards.html">GIFT CARDS</a> -->
+        </nav>
+  <label for="menu-toggle" class="overlay"></label>
+        <hr>
+
+        <div class="nav-right">
+            <!-- <a href="#">Find a store</a> -->
+            <!-- <a href="#" class="sign-in">Sign in</a> -->
+            <!-- <a href="#" class="join-now">Join now</a> -->
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+   Navbar 
+  <div class="navbar">
+    <div class="left-nav">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz9GDU2oqEIT2QOcmZGosIHmrx20FISBibNT-0krSrI_KkJuDwkN3onXV7jRAQHwxPUVc&usqp=CAU"alt="Starbucks Logo">
+      <a href="#">MENU</a>
+    </div>
+    <div class="right-nav">
+        <a href ="starbucks_index.html">HOME</a>
+      <a href="#">REWARDS</a>
+      <a href="#">GIFT CARDS</a>
+      <a href="#">Find a store</a>
+    </div>
+  </div> -->
+
+   <!-- <header>
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1024px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="starbucks_index.html">HOME</a>
+                <a href="starbucks_menu.html">MENU </a>
+                <a href="starbucks_giftcard.html">GIFT CARD</a>
+                <a href="starbucks_reward.html">REWARDS </a>
+         
+    </nav>
+    <div class="nav-right">
+        <a href="starbucks_find.html">Find a store</a>
+        <a href="starbucks_signin.html" class="sign-in">Sign in</a>
+        <a href="starbucks_signin.html" class="join-now">Join now</a>
+    </div>
+</header> -->
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Drinks</h3>
+      <a href="#">Hot Coffee</a>
+      <a href="#">Cold Coffee</a>
+      <a href="#">Hot Tea</a>
+      <a href="#">Cold Tea</a>
+      <a href="#">Refreshers</a>
+      <a href="#">Frappuccino® Blended Beverage</a>
+      <a href="#">Hot Chocolate, Lemonade & More</a>
+      <a href="#">Bottled Beverages</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3>Our Food Menu</h3>
+      <a href="#">BreakFast</a>
+      <a href="#">Bakery</a>
+      <a href="#">Treats</a>
+      <a href="#">Lunch</a>
+      <a href="#">Snacks</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3>At Home Coffee</h3>
+      <a href="#">Whole Bean</a>
+      <a href="#">VIA' Instant</a>
+      <a href="#">Shopping Bags</a>
+    </div>
+
+    
+
+    <!-- Menu Content -->
+    <div class="menu-content">
+      <!--<h2>Menu</h2>
+      <h3>Drinks</h3>-->
+     <!-- <div class="drink-category">
+        <img src="https://t3.ftcdn.net/jpg/05/34/82/24/360_F_534822425_9Ok2L60rSndeunIM6sELPKvuDqzhopX7.jpg" alt="Hot Coffee">
+        <span>Hot Coffee</span>
+      </div>
+      <div class="drink-category">
+        <img src="https://globalassets.starbucks.com/digitalassets/products/bev/NonDairyVanillaSweetCreamColdBrew.jpg?impolicy=1by1_tight_288&crop=495,495,810,810&wid=288&hei=288&qlt=85" alt="Cold Coffee">
+        <span>Cold Coffee</span>
+      </div>
+      <div class="drink-category">
+        <img src="https://buytea.com/cdn/shop/articles/cup-of-hot-tea.webp?v=1711014589" alt="Hot Tea">
+        <span>Hot Tea</span>
+      </div>
+      <div class="drink-category">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_9-fTKfNEqcu6K_N_j6Wywyq0ixj3q7cMIw&s" alt="Cold Tea">
+        <span>Cold Tea</span>
+      </div>
+    </div>
+  </div>
+--><h1>Our Drinks Menu</h1>
+
+<div class="menu-container">
+    <!-- Column 1 items -->
+    <div class="menu-item">
+        <img src="https://www.travelforever.com.au/wp-content/uploads/2020/09/Picture1.jpg" alt="Drink 1">
+        <h3>Hot Coffee</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://media.istockphoto.com/id/1072946340/photo/glass-cold-brew-coffee-with-ice-and-milk-on-black-or-dark-background.jpg?s=612x612&w=0&k=20&c=fkZIHaTmBnu23hBfjIS_T4UE_1nsoLjzzx6oNVbmQmg=" alt="Drink 2">
+        <h3>Cold Coffee</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://media.istockphoto.com/id/1358132613/photo/refreshing-hot-cup-of-coffee-at-a-cafe.jpg?s=612x612&w=0&k=20&c=ObwIF28Vt3k93Nch9U4QYUdOwMA_eiMwVVCvKbypnNc=" alt="Drink 3">
+        <h3>Hot Tea</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://budleaf.com/wp-content/uploads/2023/04/shutterstock_2175082285-1568x1045.jpg" alt="Drink 4">
+        <h3>Cold Tea</h3>
+    </div>
+
+    <!-- Column 2 items -->
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNX5SaSJAkVM93FO-sf8Vw3xl9jVZT6lQLxw&s" alt="Drink 5">
+        <h3>Refreshers</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMwq87Ry7LTwVF_CzXHV_5Ryc4eFE1FsFQnD2A2YL5rVAI8sVpPH9n8xSoKDJUK8QMEPg&usqp=CAU" alt="Drink 6">
+        <h3>Frappuccino</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSHzEe4wmPuKz2gV8ZwxUbUHe2n9gUov0s6nBzz7ly4u2p3gjZw1Ko7PLWwWtTege2pF4&usqp=CAU" alt="Drink 7">
+        <h3>Hot Chocolate</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJFu-MJEX85a5kxCpw3_vjoe6nX5lGBYtJbA&s" alt="Drink 8">
+        <h3>Cold Choco </h3>
+    </div>
+</div>
+<h1>Our Food Menu</h1>
+
+<div class="menu-container">
+    <!-- Column 1 items -->
+    <div class="menu-item">
+        <img src="https://globalassets.starbucks.com/digitalassets/products/food/EggPestoMozzarellaSandwich.jpg?impolicy=1by1_medium_630&crop=351,351,1098,1098&wid=630&hei=630&qlt=85" alt="Drink 1">
+        <h3>Egg, Pesto & Mozzarella Sandwich</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://globalassets.starbucks.com/digitalassets/products/food/SBX20210915_BaconGoudaEggSandwich.jpg?impolicy=1by1_medium_630&crop=351,351,1098,1098&wid=630&hei=630&qlt=85" alt="Drink 2">
+        <h3>Bacon, Gouda & Egg Sandwich</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8ywBucmq3FOnuL3DJMf85ipxLDrdk08yyNg&s" alt="Drink 3">
+        <h3>Double-Smoked Bacon, Cheddar & Egg Sandwich</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxtS5MbESZwfV0C6gIza_xN1VPywEK01C6A&s" alt="Drink 4">
+        <h3>Sausage, Cheddar & Egg Sandwich</h3>
+    </div>
+
+    <!-- Column 2 items -->
+    <div class="menu-item">
+        <img src="https://globalassets.starbucks.com/digitalassets/products/food/TurkeyBaconCheddarEggWhiteSandwich.jpg?impolicy=1by1_medium_630&crop=351,351,1098,1098&wid=630&hei=630&qlt=85" alt="Drink 5">
+        <h3>Turkey Bacon, Cheddar & Egg White Sandwich</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://globalassets.starbucks.com/digitalassets/products/food/SBX20200225_ImpossibleBreakfastSandwich.jpg?impolicy=1by1_medium_630&crop=351,351,1098,1098&wid=630&hei=630&qlt=85" alt="Drink 6">
+        <h3>Impossible™ Breakfast Sandwich</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStYPmTR_jqvTtZfi4QpbQ25RqLJQY8WJgqVQ&s" alt="Drink 7">
+        <h3>Spinach, Feta & Egg White Wrap</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://globalassets.starbucks.com/digitalassets/products/food/BaconSausageEggWrap.jpg?impolicy=1by1_medium_630&crop=351,351,1098,1098&wid=630&hei=630&qlt=85" alt="Drink 8">
+        <h3>Bacon, Sausage & Egg Wrap </h3>
+    </div>
+</div>
+ <h1>At Home Coffee</h1>
+<div class="menu-container">
+   
+    <!-- Column 1 items -->
+    <div class="menu-item">
+        <img src="https://globalassets.starbucks.com/digitalassets/products/at-home/MexicoTenejapaSanCristobal-US-WBReserve.jpg?impolicy=1by1_tight_288&crop=495,495,810,810&wid=288&hei=288&qlt=85" alt="Drink 1">
+        <h3>Whole Bean</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://globalassets.starbucks.com/digitalassets/products/at-home/SBX20190715_ViaInstantSweetenedIcedCoffee.jpg?impolicy=1by1_tight_288&crop=495,495,810,810&wid=288&hei=288&qlt=85" alt="Drink 2">
+        <h3>VIA' Instant</h3>
+    </div>
+    <div class="menu-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdg6QRElPEPoSHaNcVq2Zz9uZmOqabQiMRgA&s" alt="Drink 5">
+        <h3>Shopping Bags</h3>
+    </div>
+    </div>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-columns">
+
+        <div class="footer-column">
+            <h4>About Us</h4>
+            <a href="#">Our Company</a>
+            <a href="#">Our Coffee</a>
+            <a href="#">About Starbucks</a>
+            <a href="#">Starbucks Archive</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="footer-column">
+            <h4>Careers</h4>
+            <a href="#">Culture and Values</a>
+            <a href="#">Belonging at Starbucks</a>
+            <a href="#">College Achievement Plan</a>
+            <a href="#">Alumni Community</a>
+            <a href="#">U.S. Careers</a>
+            <a href="#">International Careers</a>
+        </div>
+
+        <div class="footer-column">
+            <h4>Social Impact</h4>
+            <a href="#">Communities</a>
+            <a href="#">Starbucks Foundation</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Environmental and Social Impact Reporting</a>
+        </div>
+
+        <div class="footer-column">
+            <h4>For Business Partners</h4>
+            <a href="#">Landlord Support Center</a>
+            <a href="#">Suppliers</a>
+            <a href="#">Corporate Gift Card Sales</a>
+            <a href="#">Office and Foodservice Coffee</a>
+        </div>
+
+        <div class="footer-column">
+            <h4>Order and Pick Up</h4>
+            <a href="#">Order on the App</a>
+            <a href="#">Order on the Web</a>
+            <a href="#">Delivery</a>
+            <a href="#">Order and Pick Up Options</a>
+            <a href="#">Explore and Find Coffee for Home</a>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
